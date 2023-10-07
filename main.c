@@ -6,7 +6,7 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:10:52 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/07 11:34:48 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:19:06 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -276,12 +276,25 @@ int main(void){
 	printf("\nLa función ft_strnstr() devuelve: %s\n\n\n", ft_strnstr(str3, str4, len));
 
     printf("\n ************** Prueba de ft_substr() ************\n");
-    char *strb = "Hola Mundo";
+    char *strb = "Hola";
     char *ptr4;
-    ptr4 = ft_substr(strb, 2, 5);
+    ptr4 = ft_substr(strb, 0, 111254555);
     printf("La cadena es: %s\n", ptr4);
     free(ptr4);
     
+    printf("\n ************** Prueba de ft_strtrim() ************\n");
+    char *strc = "Hola";
+    char *set = "jla";
+    printf("La cadena original es: %s\n", strc);
+    char *ptr5 = ft_strtrim(strc, set);
+    if (ptr5) {
+        printf("La cadena es: %s\n", ptr5);
+        free(ptr5);
+    } else {
+        printf("Error: La función ft_strtrim devolvió NULL.\n");
+    }
 
+
+    //💀
     return (0);  
 }
