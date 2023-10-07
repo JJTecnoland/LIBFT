@@ -6,7 +6,7 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:10:52 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/06 13:06:29 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 11:34:48 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -275,7 +275,13 @@ int main(void){
 	printf("El str4 es: %s\n", str4);
 	printf("\nLa función ft_strnstr() devuelve: %s\n\n\n", ft_strnstr(str3, str4, len));
 
-
+    printf("\n ************** Prueba de ft_substr() ************\n");
+    char *strb = "Hola Mundo";
+    char *ptr4;
+    ptr4 = ft_substr(strb, 2, 5);
+    printf("La cadena es: %s\n", ptr4);
+    free(ptr4);
+    
 
     return (0);  
 }

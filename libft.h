@@ -6,7 +6,7 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:32:34 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/03 12:20:24 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 11:34:06 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int					ft_tolower(int c);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *str);
 
-//char				*ft_substr(char const *s, unsigned int start, size_t len);
+char				*ft_substr(char const *s, unsigned int start, size_t len);
 //char				*ft_strjoin(char const *s1, char const *s2);
 //char				*ft_strtrim(char const *s1, char const *set);
 //char				**ft_split(char const *s, char c);
