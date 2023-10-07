@@ -6,15 +6,13 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:52 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/07 13:44:06 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 15:09:56 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-// Reserva memoria (con malloc) y devuelve la cadena de caracteres que
-// está contenida en el string dado como argumento. Esta nueva cadena de
-// caracteres comienza en el índice ’start’ y tiene como tamaño máximo ’len’.
+/* Reserva memoria (con malloc) y devuelve la cadena de caracteres que está 
+  contenida en el string dado como argumento. Esta nueva cadena de caracteres 
+  comienza en el índice ’start’ y tiene como tamaño máximo ’len’.*/
 
 #include "libft.h"
 #define MAX_LEN 100

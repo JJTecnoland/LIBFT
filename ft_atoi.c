@@ -6,14 +6,14 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:55:36 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/03 10:56:28 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:38:04 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Se usa para convertir a nº entero una cadena de caracteres.
-// Devuelve el nº entero convertido.
+// Convierte a número entero una cadena de caracteres.
+// Devuelve el número entero convertido.
 int	ft_atoi(const char *str)
 {
 	long			res;

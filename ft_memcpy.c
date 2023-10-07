@@ -6,9 +6,13 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:14:20 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/03 11:48:33 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:55:10 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* La función memcpy() en C se utiliza para copiar un bloque de memoria de un
+  lugar a otro.*/
+/* La función memcpy() devuelve un puntero a la memoria de destino. */
 
 #include "libft.h"
 

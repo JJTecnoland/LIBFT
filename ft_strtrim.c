@@ -6,14 +6,16 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 13:51:29 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/07 13:59:26 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 15:08:28 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* La función strtrim() en C sirve para recortar los espacios en blanco i
-niciales y finales de una cadena de caracteres. */
+/* Recorta los espacios en blanco iniciales y finales de una cadena de 
+caracteres. */
+/* La función strtrim() devuelve una copia de la cadena s1 sin los caracteres
+especificados en el set al principio y al final de la cadena. */
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

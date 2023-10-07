@@ -6,16 +6,13 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:07:19 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/09/30 18:29:08 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:58:54 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-strlen() es una función de la biblioteca estándar de C que se utiliza para 
-obtener la longitud de una cadena de caracteres.
-
-size_t strlen(const char *s);
-*/
+/* Obtiene la longitud de una cadena de caracteres.*/
+/* La función strlen() devuelve el número de caracteres que contiene la cadena
+   de caracteres str, sin incluir el carácter nulo de terminación. */
 
 #include "libft.h"
 

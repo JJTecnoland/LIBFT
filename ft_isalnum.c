@@ -6,9 +6,14 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 11:38:51 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/03 11:22:41 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:42:07 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// verifica si todos los caracteres en una cadena son alfanuméricos.
+/* La función devuelve "True" si la cadena contiene solo letras y números, y 
+"False" si contiene cualquier otro carácter, como espacios, signos de 
+puntuación o símbolos. */
 
 #include "libft.h"
 

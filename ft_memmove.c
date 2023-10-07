@@ -6,12 +6,13 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 13:02:20 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/06 14:29:09 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:55:26 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*Se utiliza para copiar un bloque de memoria de un lugar a otro, incluso si 
  los bloques se superponen.*/
+/*La función memmove() devuelve un puntero al bloque de memoria de destino.*/
 
 #include "libft.h"
 

@@ -6,9 +6,12 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 20:06:34 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/03 11:55:58 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 15:10:42 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Convierte una letra minúscula a mayúscula. */
+/* La función toupper() devuelve el valor de c como una letra mayúscula. */
 
 #include "libft.h"
 

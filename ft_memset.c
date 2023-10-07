@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlunar-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:34:19 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/09/29 11:34:41 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:55:57 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-La función memset() se utiliza para llenar un bloque de memoria con un valor 
-constante byte a byte. Su prototipo es: */
+/* La función memset() se utiliza para llenar un bloque de memoria con un valor 
+constante byte a byte. */
+/* La función memset() devuelve un puntero al bloque de memoria de destino. */
 
 #include "libft.h"
 

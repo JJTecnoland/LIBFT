@@ -6,9 +6,14 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:39:38 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/06 14:06:06 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:56:39 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* La función strchr() en C se utiliza para encontrar la primera ocurrencia de
+   un carácter específico en una cadena. */
+/* La función strchr() devuelve un puntero al carácter si se encuentra, de lo
+contrario devuelve NULL. */
 
 #include "libft.h"
 
@@ -29,21 +34,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + i);
 	return (NULL);
 }
-
-/*
-char	*ft_strchr(const char *s, int c)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i++;
-	}
-	if (!c && s[i] == '\0')
-		return ((char *)s + i);
-	return (NULL);
-}
-*/

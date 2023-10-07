@@ -6,12 +6,14 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 20:41:17 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/09/27 12:13:47 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:54:22 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //La función memcmp() se utiliza para comparar dos bloques de memoria. 
-//Es declarada en string.h de la siguiente manera:
+/* La función memcmp() devuelve 0 si los dos bloques de memoria son idénticos, 
+   de lo contrario devuelve la diferencia entre los primeros bytes diferentes 
+   tratados como unsigned char. */
 
 #include "libft.h"
 

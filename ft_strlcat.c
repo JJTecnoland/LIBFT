@@ -6,9 +6,14 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:57:11 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/03 12:12:13 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:57:28 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* La función strlcat() concatena la cadena src a la cadena dst. 
+   El parámetro size es el tamaño del búfer de destino. */
+/* La función strlcat() devuelve el tamaño total de la cadena que se intentó
+   crear. */
 
 #include "libft.h"
 

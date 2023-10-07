@@ -6,13 +6,14 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:35:27 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/09/29 13:16:01 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/07 14:56:57 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-La función strdup() se utiliza para crear un duplicado de una cadena de 
+/* La función strdup() se utiliza para crear un duplicado de una cadena de 
 caracteres en memoria dinámica.*/
+/* La función strdup() devuelve un puntero a la cadena duplicada. */
+
 #include "libft.h"
 
 char	*ft_strdup(const char *s)
