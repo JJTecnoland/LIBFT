@@ -6,7 +6,7 @@
 /*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:10:52 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/07 14:19:06 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/08 12:27:46 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -293,6 +293,35 @@ int main(void){
     } else {
         printf("Error: La función ft_strtrim devolvió NULL.\n");
     }
+
+
+    printf("\n ************** Prueba de ft_strjoin() ************\n");
+    char *strd = "Hola";
+    char *stre = " Mundo";
+    printf("La cadena 1 es: %s\n", strd);
+    printf("La cadena 2 es: %s\n", stre);
+    char *ptr6 = ft_strjoin(strd, stre);
+    if (ptr6) {
+        printf("La cadena es: %s\n", ptr6);
+        free(ptr6);
+    } else {
+        printf("Error: La función ft_strjoin devolvió NULL.\n");
+    }
+    
+    printf("\n ************** Prueba de ft_split() ************\n");
+    char *strf = "Hola Mundo";
+    char **ptr7 = ft_split(strf, 'o');
+    if (ptr7) {
+        printf("La cadena es: %s\n", ptr7[0]);
+        printf("La cadena es: %s\n", ptr7[1]);
+        free(ptr7[0]);
+        free(ptr7[1]);
+        free(ptr7);
+    } else {
+        printf("Error: La función ft_split devolvió NULL.\n");
+    }
+
+   
 
 
     //💀
