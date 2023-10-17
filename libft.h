@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
+/*   By: jlunar-a <jlunar-a@student.42.es>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 13:32:34 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/08 11:50:14 by jlunar-a         ###   ########.fr       */
+/*   Created: 2023/10/16 10:32:34 by jlunar-a          #+#    #+#             */
+/*   Updated: 2023/10/16 18:59:00 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -45,13 +45,14 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
-//char				*ft_itoa(int n);
-//char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-//void				ft_putchar_fd(char c, int fd);
-//void				ft_putstr_fd(char *s, int fd);
-//void				ft_putendl_fd(char *s, int fd);
-//void				ft_putnbr_fd(int n, int fd);
-/*
+char				*ft_itoa(int n);
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void				ft_striteri(char *s, void (*f)(unsigned int, char*));
+void				ft_putchar_fd(char c, int fd);
+void				ft_putstr_fd(char *s, int fd);
+void				ft_putendl_fd(char *s, int fd);
+void				ft_putnbr_fd(int n, int fd);
+
 typedef struct s_list
 {
 	void			*content;
@@ -67,5 +68,5 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), \
 					void (*del)(void *));
-					*/
+					
 #endif

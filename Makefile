@@ -1,20 +1,26 @@
-# **************************************************************************** #
+#******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+         #
+#    By: jlunar-a <jlunar-a@student.42.es>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/27 10:04:53 by jlunar-a          #+#    #+#              #
-#    Updated: 2023/10/06 13:05:56 by jlunar-a         ###   ########.fr        #
+#    Updated: 2023/10/16 18:45:07 by jlunar-a         ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+#******************************************************************************#
 
 NAME := libft.a
 
 SOURCES := $(wildcard *.c)
 
 OBJS := $(SOURCES:.c=.o)
+
+BONUS	=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+			ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+			ft_lstmap.c ft_lstnew.c ft_lstsize.c
+
+BONUS_OBJS	= $(BONUS:.c=.o)
 
 CFLAGS := -Wall -Wextra -Werror  
 
@@ -28,15 +34,15 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
     
-re: fclean all
+bonus:$(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
-.PHONY: all clean fclean re install uninstall
-
+.PHONY:			all clean fclean re bonus
 PREFIX=/usr/local
 
 install: $(NAME)

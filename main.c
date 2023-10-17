@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlunar-a < jlunar-a@student.42urduliz.c    +#+  +:+       +#+        */
+/*   By: jlunar-a <jlunar-a@student.42.es>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:10:52 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/08 12:27:46 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/16 19:01:20 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "libft.h"
 #include <stdio.h>
@@ -282,6 +282,19 @@ int main(void){
     printf("La cadena es: %s\n", ptr4);
     free(ptr4);
     
+    printf("\n ************** Prueba de ft_strjoin() ************\n");
+    char *stre = "Hola";
+    char *strf = "Mundo";
+    printf("La cadena original es: %s\n", stre);
+    printf("La cadena original es: %s\n", strf);
+    char *ptr7 = ft_strjoin(stre, strf);
+    if (ptr7) {
+        printf("La cadena es: %s\n", ptr7);
+        free(ptr7);
+    } else {
+        printf("Error: La función ft_strjoin devolvió NULL.\n");
+    }
+
     printf("\n ************** Prueba de ft_strtrim() ************\n");
     char *strc = "Hola";
     char *set = "jla";
@@ -294,36 +307,174 @@ int main(void){
         printf("Error: La función ft_strtrim devolvió NULL.\n");
     }
 
-
-    printf("\n ************** Prueba de ft_strjoin() ************\n");
-    char *strd = "Hola";
-    char *stre = " Mundo";
-    printf("La cadena 1 es: %s\n", strd);
-    printf("La cadena 2 es: %s\n", stre);
-    char *ptr6 = ft_strjoin(strd, stre);
-    if (ptr6) {
-        printf("La cadena es: %s\n", ptr6);
-        free(ptr6);
-    } else {
-        printf("Error: La función ft_strjoin devolvió NULL.\n");
-    }
-    
+    //💀
     printf("\n ************** Prueba de ft_split() ************\n");
-    char *strf = "Hola Mundo";
-    char **ptr7 = ft_split(strf, 'o');
-    if (ptr7) {
-        printf("La cadena es: %s\n", ptr7[0]);
-        printf("La cadena es: %s\n", ptr7[1]);
-        free(ptr7[0]);
-        free(ptr7[1]);
-        free(ptr7);
+    char *strd = "Hola";
+    char c1 = 'o';
+    printf("La cadena original es: %s\n", strd);
+    char **ptr6 = ft_split(strd, c1);
+    if (ptr6) {
+        printf("La cadena es: %s\n", ptr6[0]);
+        free(ptr6);
     } else {
         printf("Error: La función ft_split devolvió NULL.\n");
     }
+    
+    printf("\n ************** Prueba de ft_itoa() ************\n");
+    int n = 1234;
+    printf("El número es: %d\n", n);
+    char *ptr9 = ft_itoa(n);
+    if (ptr9) {
+        printf("La cadena es: %s\n", ptr9);
+        free(ptr9);
+    } else {
+        printf("Error: La función ft_itoa devolvió NULL.\n");
+    }
+        
+    printf("\n ************** Prueba de ft_strmapi() ************\n");
+    char *strg = "Hola";
+    printf("La cadena original es: %s\n", strg);
+    char *ptr8 = ft_strmapi(strg, &ft_toupper);
+    if (ptr8) {
+        printf("La cadena es: %s\n", ptr8);
+        free(ptr8);
+    } else {
+        printf("Error: La función ft_strmapi devolvió NULL.\n");
+    }
 
-   
+    printf("\n ************** Prueba de ft_striteri() ************\n");
+    char *strh = "Hola";
+    printf("La cadena original es: %s\n", strh);
+    ft_striteri(strh, &ft_toupper);
+    printf("La cadena es: %s\n", strh);
 
 
-    //💀
+    printf("\n ************** Prueba de ft_putchar_fd() ************\n");
+    char c2 = 'a';
+    printf("El caracter es: %c\n", c2);
+    ft_putchar_fd(c2, 1);
+
+    printf("\n ************** Prueba de ft_putstr_fd() ************\n");
+    char *stri = "Hola";
+    printf("La cadena es: %s\n", stri);
+    ft_putstr_fd(stri, 1);
+    
+    printf("\n ************** Prueba de ft_putendl_fd() ************\n");
+    char *strj = "Hola";
+    printf("La cadena es: %s\n", strj);
+    ft_putendl_fd(strj, 1);
+
+    printf("\n ************** Prueba de ft_putnbr_fd() ************\n");
+    int n1 = 1234;
+    printf("El número es: %d\n", n1);
+    ft_putnbr_fd(n1, 1);
+    
+    printf("\n ************** Prueba de ft_lstnew() ************\n");
+    char *content = "Hola";
+    t_list *ptr10 = ft_lstnew(content);
+    if (ptr10) {
+        printf("El contenido es: %s\n", ptr10->content);
+        free(ptr10);
+    } else {
+        printf("Error: La función ft_lstnew devolvió NULL.\n");
+    }
+    
+    printf("\n ************** Prueba de ft_lstadd_front() ************\n");
+    char *content1 = "Hola";
+    char *content2 = "Mundo";
+    t_list *ptr11 = ft_lstnew(content1);
+    t_list *ptr12 = ft_lstnew(content2);
+    ft_lstadd_front(&ptr11, ptr12);
+    if (ptr11) {
+        printf("El contenido es: %s\n", ptr11->content);
+        free(ptr11);
+    } else {
+        printf("Error: La función ft_lstadd_front devolvió NULL.\n");
+    }
+
+    printf("\n ************** Prueba de ft_lstsize() ************\n");
+    char *content3 = "Hola";
+    char *content4 = "Mundo";
+    t_list *ptr13 = ft_lstnew(content3);
+    t_list *ptr14 = ft_lstnew(content4);
+    ft_lstadd_front(&ptr13, ptr14);
+    printf("El tamaño de la lista es: %d\n", ft_lstsize(ptr13));
+    free(ptr13);
+    free(ptr14);
+
+    printf("\n ************** Prueba de ft_lstlast() ************\n");
+    char *content5 = "Hola";
+    char *content6 = "Mundo";
+    t_list *ptr15 = ft_lstnew(content5);
+    t_list *ptr16 = ft_lstnew(content6);
+    ft_lstadd_front(&ptr15, ptr16);
+    printf("El último elemento de la lista es: %s\n", ft_lstlast(ptr15)->content);
+    free(ptr15);
+    free(ptr16);
+    
+    printf("\n ************** Prueba de ft_lstadd_back() ************\n");
+    char *content7 = "Hola";
+    char *content8 = "Mundo";
+    t_list *ptr17 = ft_lstnew(content7);
+    t_list *ptr18 = ft_lstnew(content8);
+    ft_lstadd_back(&ptr17, ptr18);
+    printf("El último elemento de la lista es: %s\n", ft_lstlast(ptr17)->content);
+    free(ptr17);
+    free(ptr18);
+    
+    printf("\n ************** Prueba de ft_lstdelone() ************\n");
+    char *content9 = "Hola";
+    t_list *ptr19 = ft_lstnew(content9);
+    ft_lstdelone(ptr19, &free);
+    if (ptr19) {
+        printf("El contenido es: %s\n", ptr19->content);
+        free(ptr19);
+    } else {
+        printf("Error: La función ft_lstdelone devolvió NULL.\n");
+    }
+
+    printf("\n ************** Prueba de ft_lstclear() ************\n");
+    char *content10 = "Hola";
+    char *content11 = "Mundo";
+    t_list *ptr20 = ft_lstnew(content10);
+    t_list *ptr21 = ft_lstnew(content11);
+    ft_lstadd_front(&ptr20, ptr21);
+    ft_lstclear(&ptr20, &free);
+    if (ptr20) {
+        printf("El contenido es: %s\n", ptr20->content);
+        free(ptr20);
+    } else {
+        printf("Error: La función ft_lstclear devolvió NULL.\n");
+    }
+    
+    printf("\n ************** Prueba de ft_lstiter() ************\n");
+    char *content12 = "Hola";
+    char *content13 = "Mundo";
+    t_list *ptr22 = ft_lstnew(content12);
+    t_list *ptr23 = ft_lstnew(content13);
+    ft_lstadd_front(&ptr22, ptr23);
+    ft_lstiter(ptr22, &ft_lstiter_func);
+    if (ptr22) {
+        printf("El contenido es: %s\n", ptr22->content);
+        free(ptr22);
+    } else {
+        printf("Error: La función ft_lstiter devolvió NULL.\n");
+    }
+    
+    printf("\n ************** Prueba de ft_lstmap() ************\n");
+    char *content14 = "Hola";
+    char *content15 = "Mundo";
+    t_list *ptr24 = ft_lstnew(content14);
+    t_list *ptr25 = ft_lstnew(content15);
+    ft_lstadd_front(&ptr24, ptr25);
+    t_list *ptr26 = ft_lstmap(ptr24, &ft_lstmap_func, &ft_lstmap_del);
+    if (ptr26) {
+        printf("El contenido es: %s\n", ptr26->content);
+        free(ptr26);
+    } else {
+        printf("Error: La función ft_lstmap devolvió NULL.\n");
+    }
+    
+  
     return (0);  
 }

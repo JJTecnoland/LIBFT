@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlunar-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 10:30:39 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/16 10:30:53 by jlunar-a         ###   ########.fr       */
+/*   Created: 2023/10/16 10:31:41 by jlunar-a          #+#    #+#             */
+/*   Updated: 2023/10/16 10:31:54 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
-	int		i;
-	int		j;
+	char			*str;
+	unsigned int	i;
 
+	if (!s || !f)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	j = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (str == 0)
-		return (0);
-	while (s1[i] != 0)
+	while (s[i])
 	{
-		str[i] = s1[i];
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	while (s2[j] != 0)
-	{
-		str[i] = s2[j];
-		i++;
-		j++;
-	}
-	str[i] = 0;
+	str[i] = '\0';
 	return (str);
 }
