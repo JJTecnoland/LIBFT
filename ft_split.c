@@ -6,78 +6,96 @@
 /*   By: jlunar-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:24:23 by jlunar-a          #+#    #+#             */
-/*   Updated: 2023/10/17 13:18:34 by jlunar-a         ###   ########.fr       */
+/*   Updated: 2023/10/17 11:28:50 by jlunar-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_strings(char const *s, char c)
+static void	*ft_free(char **res, size_t pos)
 {
-	int		newstr;
-	size_t	str_n;
-
-	newstr = 0;
-	str_n = 0;
-	while (*s)
+	while (pos != 0)
 	{
-		if (*s != c && newstr == 0)
-		{
-			newstr = 1;
-			str_n++;
-		}
-		else if (*s == c)
-			newstr = 0;
-		s++;
+		free(res[pos]);
+		pos--;
 	}
-	return (str_n);
+	free(res[pos]);
+	free(res);
+	return (NULL);
 }
 
-size_t	ft_count_chr(char const *s, char c)
+static void	ft_word(char const *str, size_t *first, size_t *last, char c)
 {
-	size_t	len;
-
-	len = 0;
-	while (*s && *s++ != c)
-		len++;
-	return (len);
+	*first = *last;
+	while (str[*first] == c)
+		*first = *first + 1;
+	*last = *first;
+	while (str[*last] != c && str[*last] != '\0')
+		*last = *last + 1;
 }
 
-void	ft_free_tab(char **tab, size_t n)
+static size_t	ft_count(char const *str, char c)
 {
-	if (!tab[n])
+	size_t	count;
+	size_t	first;
+	size_t	last;
+
+	count = 0;
+	first = 0;
+	last = 0;
+	while (str[last] != '\0')
 	{
-		while (n > 0)
-			free(tab[n--]);
-		free(tab);
+		ft_word(str, &first, &last, c);
+		if (last == first)
+			break ;
+		else
+			count++;
 	}
+	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static char	*ft_fill(char const *str, size_t first, size_t last)
 {
-	char	**split;
-	size_t	str_n;
-	size_t	n;
-	size_t	len;
+	char	*word;
+	size_t	pos;
 
-	if (!s)
-		return (0);
-	str_n = ft_count_strings(s, c);
-	split = (char **)malloc(sizeof(char *) * (str_n + 1));
-	if (!split)
-		return (0);
-	n = 0;
-	while (n < str_n)
+	pos = 0;
+	word = malloc(sizeof(char) * (last - first) + 1);
+	if (!word)
+		return (NULL);
+	word[last - first] = 0;
+	while (first < last)
 	{
-		while (*s == c)
-			s++;
-		len = ft_count_chr(s, c);
-		split[n] = (char *)malloc(sizeof(char) * (len + 1));
-		ft_free_tab(split, n);
-		ft_strlcpy(split[n], (char *)s, len + 1);
-		s = s + len;
-		n++;
+		word[pos] = str[first];
+		pos++;
+		first++;
 	}
-	split[str_n] = 0;
-	return (split);
+	return (word);
+}
+
+char	**ft_split(char const *str, char c)
+{
+	char	**res;
+	size_t	first;
+	size_t	last;
+	size_t	pos;
+
+	res = malloc(sizeof(char *) * (ft_count(str, c) + 1));
+	if (!res)
+		return (NULL);
+	res[ft_count(str, c)] = 0;
+	last = 0;
+	first = 0;
+	pos = 0;
+	while (pos < ft_count(str, c))
+	{
+		ft_word(str, &first, &last, c);
+		if (last == first)
+			break ;
+		res[pos] = ft_fill(str, first, last);
+		if (!res[pos])
+			return (ft_free(res, pos));
+		pos++;
+	}
+	return (res);
 }
